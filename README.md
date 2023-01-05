@@ -3,6 +3,6 @@ Dieses Repository enthält Material für das Modul "Nachrichtenübertragung 1" d
 
 Diese Jupyter Notebooks können prinzipiell
 * entweder lokal auf Ihrem Rechner (benötigt eine [Jupyter-lab](https://jupyterlab.readthedocs.io/en/stable/#) Installation) oder
-* im Brower in der Cloud über folgenden Link [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/htw-ikt-noelle/nachrichtenuebertragung1.git/master?urlpath=lab) mittels [Binder](https://mybinder.org/) (benötigt nur eine Iternetverbindung) 
+* im Brower in der Cloud über folgenden Link [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/htw-ikt-noelle/nachrichtenuebertragung1.git/HEAD?urlpath=lab) mittels [Binder](https://mybinder.org/) (benötigt nur eine Iternetverbindung) 
 
 ausgeführt werden.
