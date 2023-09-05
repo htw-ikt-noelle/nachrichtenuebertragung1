@@ -1,8 +1,12 @@
-# please use Python version 3.10
+# please use Python version 3.11
 # to install all dependencies, run pip install -r requirements.txt
-ipywidgets
-jupyterlab
 matplotlib
+myst-parser
 numpy
+pyvisa
+pyvisa-py
 scipy
+sphinx
+jupyter
+jupyterlab
 sympy
