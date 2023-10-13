@@ -19,11 +19,11 @@ Diese Anleitung gilt nur für [Windows Systeme](https://de.wikipedia.org/wiki/Mi
 * Öffnen Sie eine Konsole (Windows: cmd.exe).
 * Erzeugen Sie eine neue virtuelle Pythonumgebung in der Sie dann alle weiteren Pakete installieren. Sie können für diese virtuelle Pythonumgebung einen beliebigen Speicherort (`<Umgebungsspeicherort>`) angeben. Bitte beachten Sie aber, dass Sie Schreibrechte in diesem Ordner brauchen. Der Name des Ordners ist dann gleichzeitig der Name der virtuellen Pythonumgebung.
   
-  `<Python-Installationspfad>\python.exe -m venv <Umgebungsspeicherort>\nue1`
+  `<Python-Installationspfad>\python.exe -m venv <Umgebungsspeicherort>`
   
 * Aktivieren Sie die gerade erzeugte Pythonumgebung
 
-    `<Umgebungsspeicherort>\nue1\Scripts\activate.bat`
+    `<Umgebungsspeicherort>\Scripts\activate.bat`
 
 * Installieren Sie alle benötigten Pythonmodule und -pakete mittels [pip](https://de.wikipedia.org/wiki/Pip_(Python)). Benutzen Sie dazu die Textdatei requirements.txt, in der alle benötigten Pakete aufgeführt sind.
 

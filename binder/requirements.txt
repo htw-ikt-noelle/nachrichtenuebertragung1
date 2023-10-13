@@ -10,3 +10,4 @@ sphinx
 jupyter
 jupyterlab
 sympy
+schemdraw
