@@ -1,11 +1,19 @@
-import schemdraw
+import schemdraw, os, sys
 from schemdraw import elements as elm
 from schemdraw import dsp
+import numpy as np
+import scipy.signal as ssignal
+import matplotlib.pyplot as plt
+
+sys.path.append(os.path.abspath('./comm'))
+import skcomm as skc
 
 def gen_block_diagramm():    
     annColor = '#00B9FF'    
     nue1Color = '#AAFFAA'
     nue2Color = '#FFAAAA'
+
+    # schemdraw.config(bgcolor=None)
 
     with schemdraw.Drawing(show=False) as d:
         d.config(fontsize=12)
@@ -99,3 +107,38 @@ def gen_block_diagramm():
         
         return d
         #d.save(r'.\images\nue1_overview.svg')
+
+def gen_generic_time_signal(sr=1e3, T=1):
+    t = skc.utils.create_time_axis(sample_rate=sr, n_samples=int(sr/T))
+    f1 = 5.
+    f2 = 2.
+    x = (np.sin(2*np.pi*f1*t) + np.cos(2*np.pi*f2*t)) * np.blackman(t.size)    
+    x -= np.mean(x)
+    x /= np.max(np.abs(x))
+    return x
+
+def gen_generic_freq_signal(n=1e3):
+    x = ssignal.windows.general_gaussian(n, 3, n/4, sym=True)
+    return x
+
+def plot_as_arrows(axes, xlabel=('',1.0,0.0), ylabel=('',0.0,1.0)):
+    # axes := matplotlib.axes.Axes
+    # x/ylabel=('string to be printed', xcoord in axes fractions from bottom left, ycoord in axes fractions from bottom left)
+
+    # remove ticks and grid
+    axes.set(xticks=[],yticks=[])
+    plt.grid(visible=False)
+    # set left / bottom spine properties 
+    axes.spines['left'].set(color='k',position=('data',0),visible=True,ls='-',lw=1.5,fill=True,zorder=0)
+    axes.spines['bottom'].set(color='k',position=('data',0),visible=True,ls='-',lw=1.5,fill=True, zorder=0)
+    # plot arrow at the end of the left / bottom spine https://matplotlib.org/3.3.4/gallery/recipes/centered_spines_with_arrows.html
+    axes.plot(0, 1, "^k", transform=axes.get_xaxis_transform(), clip_on=False)    
+    axes.plot(1, 0, ">k", transform=axes.get_yaxis_transform(), clip_on=False)    
+    # annotate left / bottom spine
+    axes.annotate(ylabel[0], xy=(ylabel[1], ylabel[2]), xycoords='axes fraction')
+    axes.annotate(xlabel[0], xy=(xlabel[1], xlabel[2]), xycoords='axes fraction')
+    # remove top and right spine
+    axes.spines["top"].set(visible=False)
+    axes.spines["right"].set(visible=False)
+    
+    
