@@ -33,4 +33,7 @@ Diese Anleitung gilt nur für [Windows Systeme](https://de.wikipedia.org/wiki/Mi
   
     `jupyterlab`
 
-## Lizenz???
+## Lizenz / Copyright
+
+Copyright (c) [[Markus Nölle](https://www.htw-berlin.de/hochschule/personen/person/?eid=9586). Der Python Code in diesem Repository steht unter der freien MIT Lizenz, während die Texte, das Layout und Design unter der freien  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) Lizenz veröffentlicht wurden.
+
