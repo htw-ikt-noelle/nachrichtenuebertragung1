@@ -1,3 +1,0 @@
-[submodule "comm"]
-	path = comm
-	url = https://github.com/htw-ikt-noelle/scikit-comm.git
